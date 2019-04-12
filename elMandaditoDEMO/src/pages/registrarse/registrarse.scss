@@ -1,0 +1,45 @@
+page-registrarse {}
+#foto{
+    position: relative;
+}
+
+#perfil{
+    border-radius: 50%;
+}
+
+#botonIcono{
+    position: absolute!important;
+    bottom: 0;
+    left: 60%;
+    background: rgba(34, 34, 34, 0.747)!important;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 25px;
+    color: #e6e7e6;
+}
+
+.botonPass{
+    font-size: 30px !important;
+    margin: 6px 4px;
+    background: rgb(255, 255, 255);
+    color: black;
+    box-shadow: none;
+    
+}
+
+.botonPass:hover{
+    background-color: rgb(255, 255, 255)!important;
+}
+
+.radio{
+    margin: 0px!important;
+}
+
+.falta{
+    background-color: rgba(241, 31, 31, 0.98);
+}
+
+.falta > .item{
+    background-color: rgba(241, 31, 31, 0.98);
+}

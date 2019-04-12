@@ -1,0 +1,60 @@
+<!--
+  Generated template for the CaliicacionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>¿Cómo lo hicimos?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <div class="informacion" padding>
+    <h4>ID pedido: {{idpedido}}</h4>
+    <h4> Total: ${{total}}</h4>
+  </div>
+
+  <ion-slides *ngIf="pedidos && pedidos.length" autoplay='3000' speed='800' loop="true" class='slides'>
+    <ion-slide *ngFor="let pedido of pedidos">
+        <img src={{pedido.url}} class="imgProducto">
+        <h2 class="nombre">{{pedido.nombre}}</h2>
+        <p class="cantidad">Cantidad: {{pedido.cantidad}} {{pedido.unidadMed}} </p>
+        <p class="precio">Precio: ${{pedido.precioMen}}</p>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="estrellas">
+    <button ion-button icon-only class="estrella" (tap)="calificar(1)">
+      <ion-icon name="star"></ion-icon>
+    </button>
+    <button ion-button icon-only class="estrella" (tap)="calificar(2)">
+      <ion-icon name="star"></ion-icon>
+    </button>
+    <button ion-button icon-only class="estrella" (tap)="calificar(3)">
+      <ion-icon name="star"></ion-icon>
+    </button>
+    <button ion-button icon-only class="estrella" (tap)="calificar(4)">
+      <ion-icon name="star"></ion-icon>
+    </button>
+    <button ion-button icon-only class="estrella" (tap)="calificar(5)">
+      <ion-icon name="star"></ion-icon>
+    </button>
+  </div>
+
+  <ion-item class="comentario">
+      <ion-label color="primary" floating>Comentario</ion-label>
+      <ion-textarea [(ngModel)]='comentario'></ion-textarea>
+  </ion-item>
+
+  <div class="botonContenedor">
+    <button (tap) = 'calificacion()' class='boton' ion-button block>Listo</button>
+  </div>
+
+
+</ion-content>

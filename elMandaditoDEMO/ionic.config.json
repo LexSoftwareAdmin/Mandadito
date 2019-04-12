@@ -1,0 +1,7 @@
+{
+  "name": "elMandaditoDEMO",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

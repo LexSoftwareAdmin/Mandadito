@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+        Pedido: {{id}}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content padding style="background:url(assets/img/aT2pObQJaK4Zi23LeLsg_4.png) no-repeat center;background-size:cover;" id="page9">
+    <div class="spacer" style="width:748px;height:20px;" id="pedidoPD01-spacer18"></div>
+    <h1 id="pedidoPD01-heading6" style="color:#FFFFFF;font-weight:600;">
+      Usuario: {{direccion.usuario}}
+    </h1>
+    <div id="pedidoPD01-markdown3" class="show-list-numbers-and-dots">
+      <p style="color:#FFFFFF;font-size:30px;">
+        <strong>
+          Total:
+        </strong>
+        ${{total}}
+      </p>
+    </div>
+    <div class="spacer" style="width:748px;height:28px;" id="pedidoPD01-spacer19"></div>
+    <ion-list id="pedidoPD01-list7">
+      <ion-item-divider color="light" id="pedidoPD01-list-item-divider5">
+        Descripción del Pedido
+      </ion-item-divider>
+      <ion-item *ngFor="let producto of productos">
+        <ion-thumbnail item-left>
+          <img src={{producto.url}} />
+        </ion-thumbnail>
+        <h2>
+          {{producto.nombre}}
+        </h2>
+        <p>Cantidad: {{producto.cantidad}} {{producto.unidadMed}}</p>
+        <p *ngIf="producto.sugerencia != '' && producto.sugerencia ">Sugerencia: {{producto.sugerencia}}</p>
+      </ion-item>
+    </ion-list>
+    <h2 id="pedidoPD01-heading8" style="color:#FFFFFF;font-weight:600;">
+      Datos de Envío
+    </h2>
+    <ion-list id="pedidoPD01-list8">
+      <ion-item-divider color="light" id="pedidoPD01-list-item-divider6">
+        Dirección de Cliente
+      </ion-item-divider>
+      <ion-item>
+        <h2 *ngIf='envioCond'>Gastos de envio ${{envio}}</h2>
+        <h2 *ngIf='!envioCond'>Recoger en bodega</h2>     
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Remitente
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="direccion.remitente" disabled></ion-input>
+      </ion-item>
+      <ion-item id="pedidoPD01-input11">
+        <ion-label>
+          Calle
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="direccion.nomCalle" disabled></ion-input>
+      </ion-item>
+      <ion-item id="pedidoPD01-input12">
+        <ion-label>
+          Colonia
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="direccion.nomColonia" disabled></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label>
+          Codigo postal
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="direccion.cp" disabled></ion-input>
+      </ion-item>
+      <ion-item id="pedidoPD01-input13">
+        <ion-label>
+          Teléfono
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="direccion.telefono" disabled></ion-input>
+      </ion-item>
+    </ion-list>
+    <h2 id="pedidoPD01-heading9" style="color:#FFFFFF;font-weight:600;">
+      Estatus del Pedido
+    </h2>
+      <ion-item id="pedidoPD01-input14">
+        <ion-label>
+          Estatus
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="estado" disabled></ion-input>
+      </ion-item>
+  </ion-content>

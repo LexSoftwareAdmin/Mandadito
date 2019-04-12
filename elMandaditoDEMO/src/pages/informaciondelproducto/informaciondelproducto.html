@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Informacion del Producto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/wyLrZMbxQOaeyoPv6y1A_4.png) no-repeat center;background-size:cover;" id="page8">
+  <h2 id="informaciondelProducto-heading3" style="color:#FFFFFF;font-weight:600;text-align:center;">
+    {{producto.nombre}}
+  </h2>
+  <img src={{producto.url}} class="imgProducto" style="border-radius: 50%;display:block;margin-left:auto;margin-right:auto;" />
+  <h3 id="informaciondelProducto-heading4" style="color:#FFFFFF;text-align:center;">
+    Precio: ${{precio}} {{producto.unidadMed}}
+  </h3>
+  <h4 style="color:#FFFFFF;text-align:center;">
+    {{producto.descripcion}}
+  </h4>
+  <ion-list id="informaciondelProducto-list2">
+    <ion-item-divider color="light" id="informaciondelProducto-list-item-divider2">
+      Cantidad a comprar
+    </ion-item-divider>
+    <ion-item id="informaciondelProducto-select2">
+      <ion-label>
+        Cantidad
+      </ion-label>
+      <ion-select *ngIf="!entero" [(ngModel)]="cantidadOtra" (ionChange)="addCantidad($event)" >
+        <ion-option value="0.25">
+          1/4 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="0.5">
+          1/2 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="1">
+          1 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="1.5">
+          1 + 1/2 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="2">
+          2 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="2.5">
+          2 + 1/2 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option >Otro</ion-option>
+      </ion-select>
+      <ion-select *ngIf="entero" [(ngModel)]="cantidadOtra"  (ionChange)="addCantidad($event)" >
+        <ion-option value="1">
+          1 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="2">
+          2 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="3">
+          3 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="4">
+          4 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="5">
+          5 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option value="6">
+          6 {{producto.unidadMed}}
+        </ion-option>
+        <ion-option >Otro</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item >
+      <ion-label floating>¿Alguna sugerencia?</ion-label>
+      <ion-input [(ngModel)]="sugerencia" type="text"></ion-input>
+    </ion-item>
+    <ion-item id="informaciondelProducto-input3">
+      <ion-label></ion-label>
+      <ion-input *ngIf="otro" [(ngModel)]="cantidad" (ionChange)="addSelect($event)" (keyup) = "noPunto($event)" type="number" placeholder="Ingresar otra cantidad"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button *ngIf="boton" id="informaciondelProducto-button7" ion-button color="balanced" block style="font-weight:600;" on-click="addCarrito()">
+    Agregar al carrito
+  </button>
+</ion-content>

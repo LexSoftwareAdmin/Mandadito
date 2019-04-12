@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Mi Ciudad
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/9vqNFU4xS4m2O6Jt7UZI_4.png) no-repeat center;background-size:cover;" id="page7">
+    <img src="assets/img/BSxpeCUvTLyECWtJZyty_mandaditowhite1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <h3 id="misPreferencias-heading2" style="color:#FFFFFF;font-weight:600;">
+        Selecciona tu ciudad:
+    </h3>
+        <ion-item id="misPreferencias-select1">
+            <ion-label>Mi Ciudad</ion-label>
+            <ion-select [(ngModel)]="tienda">
+                <ion-option *ngFor="let prefer of preferencias" value={{prefer.key}}>{{prefer.nombre}}</ion-option>
+            </ion-select>
+        </ion-item>
+    <br>
+    <button ion-button color="balanced" block style=" background-color:#33cd5f; font-weight:600;" on-click="goToTienda()">
+        Estoy listo para comprar
+  </button>
+</ion-content>

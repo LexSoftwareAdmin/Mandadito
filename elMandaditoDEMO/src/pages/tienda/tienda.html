@@ -1,0 +1,79 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Tienda
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background:url(assets/img/khSCh1sQiCVIZbFLL5mW_4.png) no-repeat center;background-size:cover;" id="page2">
+    <img src="assets/img/AynEHe4FRQuNojRjOnN0_mandaditowhite1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <div class="spacer" style="width:300px;height:13px;" id="tienda-spacer8"></div>
+    
+    <ion-list id="tienda-list1">
+        <div class="segmentos">
+            <ion-segment [(ngModel)]="categor">
+                <ion-segment-button value="frutas">Frutas </ion-segment-button>
+                <ion-segment-button value="verduras">Verduras</ion-segment-button>
+                <ion-segment-button value="basicos">Basicos</ion-segment-button>
+            </ion-segment>
+        </div>
+        <div [ngSwitch]="categor">
+
+            <div *ngSwitchCase="'frutas'">
+                <ion-item-divider color="light" >
+                    Listado de Productos
+                </ion-item-divider>
+        
+                <ion-item *ngFor="let frutas of frut" (tap)="infoProducto(frutas.key)" >
+                    <ion-avatar item-left>
+                        <img src={{frutas.url}} />
+                    </ion-avatar>
+                    <h2>{{frutas.nombre}}</h2>
+                    <h3 *ngIf='negocio'>Precio: ${{frutas.precioMay}} {{frutas.unidadMed}}</h3>
+                    <h3 *ngIf='!negocio'>Precio: ${{frutas.precioMen}} {{frutas.unidadMed}}</h3>
+                </ion-item>
+
+            </div>
+
+            <div *ngSwitchCase="'verduras'">
+
+                    <ion-item-divider color="light" >
+                        Listado de Productos
+                    </ion-item-divider>
+            
+                    <ion-item *ngFor="let verduras of verd" (tap)="infoProducto(verduras.key)" >
+                        <ion-avatar item-left>
+                            <img src={{verduras.url}} />
+                        </ion-avatar>
+                        <h2>{{verduras.nombre}}</h2>
+                        <h3 *ngIf='negocio'>Precio: ${{verduras.precioMay}} {{verduras.unidadMed}}</h3>
+                        <h3 *ngIf='!negocio'>Precio: ${{verduras.precioMen}} {{verduras.unidadMed}}</h3>
+                    </ion-item>
+                    
+            </div>
+
+            <div *ngSwitchCase="'basicos'">
+    
+                        <ion-item-divider color="light" >
+                            Listado de Productos
+                        </ion-item-divider>
+                
+                        <ion-item *ngFor="let basicos of basic" (tap)="infoProducto(basicos.key)" >
+                            <ion-avatar item-left>
+                                <img src={{basicos.url}} />
+                            </ion-avatar>
+                            <h2>{{basicos.nombre}}</h2>
+                            <h3 *ngIf='negocio'>Precio: ${{basicos.precioMay}} {{basicos.unidadMed}}</h3>
+                            <h3 *ngIf='!negocio'>Precio: ${{basicos.precioMen}} {{basicos.unidadMed}}</h3>
+                        </ion-item>
+                        
+            </div>
+            
+        </div>
+       
+    </ion-list>
+</ion-content>

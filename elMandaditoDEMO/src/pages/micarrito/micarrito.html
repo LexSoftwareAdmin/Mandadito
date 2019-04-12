@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Mi Carrito
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/aT2pObQJaK4Zi23LeLsg_4.png) no-repeat center;background-size:cover;" id="page3">
+    <h2 id="miCarrito-heading5" style="color:#FFFFFF;font-weight:600;">
+        Mi pedido
+    </h2>
+    <ion-list id="miCarrito-list3">
+        <ion-item-divider color="light" id="miCarrito-list-item-divider3">
+            Listado de frutas y verduras
+        </ion-item-divider>
+            <ion-item *ngFor="let carro of carrito" >
+                <ion-avatar item-left>
+                    <img src={{carro.url}} />
+                </ion-avatar>
+                <h2>{{carro.nombre}}</h2>
+                <h3>{{carro.cantidad}} {{carro.unidadMed}}. ${{carro.cantidad * carro.precioMen}}</h3>
+                <ion-icon (tap) = "slide($event,carro.key)" name="more" item-end class="more"></ion-icon>
+            </ion-item>
+            <ion-item *ngIf="boton">
+                <h2>Gastos de envio ${{envio}}</h2>
+            </ion-item>  
+        
+    </ion-list>
+    <h2 id="miCarrito-heading7" style="color:#FFFFFF;font-weight:600;">
+        Total: ${{total}}
+    </h2>
+    <button *ngIf="boton" id="miCarrito-button8" ion-button color="energized" block style="background-color:#ffc900; font-weight:600;" on-click="goToConfirmarDirecciondeEnvio()">
+    Realizar pedido
+  </button>
+</ion-content>

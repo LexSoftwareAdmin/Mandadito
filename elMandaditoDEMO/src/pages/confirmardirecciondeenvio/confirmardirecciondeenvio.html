@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            Confirmar Direccion de Envio
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/pw1d28gTdmmLTiUIWgx4_4.png) no-repeat center;background-size:cover;" id="page10">
+    <h3 id="confirmarDirecciondeEnvio-heading6" style="color:#FFFEFE;font-weight:600;">
+        Datos de envío
+    </h3>
+        <ion-item-divider color="light">
+            Dirección ( Puedes modificarlo si deseas )
+        </ion-item-divider>
+        <ion-item >
+            <ion-label floating >Nombre Destinatario</ion-label>
+            <ion-input [(ngModel)]="dir.remitente" type="text"></ion-input>
+        </ion-item>
+        <ion-item >
+            <ion-label floating >Calle y numero</ion-label>
+            <ion-input [(ngModel)]="dir.nomCalle" type="text"></ion-input>
+        </ion-item>
+        <ion-item >
+            <ion-label floating>Nombre colonia</ion-label>
+            <ion-input [(ngModel)]="dir.nomColonia" type="text"></ion-input>
+        </ion-item>
+        <ion-item  >
+            <ion-label floating>Codigo Postal</ion-label>
+            <ion-input [(ngModel)]="dir.cp" type="text" ></ion-input>
+        </ion-item>
+        <ion-item  >
+            <ion-label floating>Telefono celular</ion-label>
+            <ion-input [(ngModel)]="dir.telefono" type="text"></ion-input>
+        </ion-item>
+        <!--<ion-item >
+            <ion-label>
+              Metodo de pago
+            </ion-label>
+            <ion-select [(ngModel)]="dir.metPago" (ionChange)="especificarMet($event)">
+              <ion-option>Transferencia bancaria</ion-option>
+              <ion-option>Pago con cheque nominativo</ion-option>
+              <ion-option>Pago en efectivo</ion-option>
+              <ion-option >Otro</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="otroMet">
+            <ion-label>Especifique</ion-label>
+            <ion-input [(ngModel)]="otroMetodo" type="text"></ion-input>
+          </ion-item>-->
+        <ion-item>
+            <ion-label>Recoger en bodega</ion-label>
+            <ion-checkbox color="dark" [(ngModel)]="dir.bod"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+            <ion-label>Requiero factura</ion-label>
+            <ion-checkbox color="dark" [(ngModel)]="dir.fac"></ion-checkbox>
+        </ion-item>
+    <br>
+    <ion-item >
+        <ion-label stacked>¿Alguna Sugerencia?</ion-label>
+        <ion-input [(ngModel)]="dir.sugerencia"  type="text" placeholder=" no funciona el timbre, mi casa es color roja, etc…"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button color="assertive" block style=" background-color:#ef473a; font-weight:600;" on-click="revisarDatos()">
+        Finalizar Pedido
+    </button>
+</ion-content>

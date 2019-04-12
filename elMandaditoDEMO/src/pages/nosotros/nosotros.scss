@@ -1,0 +1,34 @@
+page-nosotros {
+    #mapa{
+        height: 50%;
+    }
+
+    .direccion{
+        font-size: 17px;
+    }
+
+    .redesSociales{
+        margin-top: 20px;
+    }
+
+    a{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+
+       
+    }
+
+    a img {
+        width: 60px;
+        height: 60px;
+    }
+
+    a p{
+        font-size: 10px;
+        color: black;
+        font-weight: bold;
+    }
+
+}

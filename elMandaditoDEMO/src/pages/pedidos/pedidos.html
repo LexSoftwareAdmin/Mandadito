@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Pedidos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/aT2pObQJaK4Zi23LeLsg_4.png) no-repeat center;background-size:cover;" id="page3">
+  <div class="spacer" style="width:748px;height:20px;" id="pedidos-spacer16"></div>
+  <h1 id="pedidos-heading5" style="color:#FFFFFF;font-weight:600;">
+    Mi Lista de Pedidos
+  </h1>
+  <div class="spacer" style="width:748px;height:19px;" id="pedidos-spacer17"></div>
+  <ion-list>
+    <ion-item-divider color="light" id="pedidos-list-item-divider4">
+      Listado de Pedidos en el Sistema
+    </ion-item-divider>
+    <ion-item *ngFor="let pedido of pedidos" >
+      <ion-avatar item-left (tap)="infoPedido(pedido.key, pedido.tienda)">
+        <img src="../../assets/img/carrito.png" />
+      </ion-avatar>
+      <h2 (tap)="infoPedido(pedido.key, pedido.tienda)">
+        ID del Pedido: {{pedido.key}}
+      </h2>
+      <p class="parrafo" text-end (tap)="infoPedido(pedido.key, pedido.tienda)">
+        {{pedido.estado}}
+      </p>
+      <button class="eliminar" *ngIf="pedido.estado=='Surtiendo'" (tap) = "opciones($event,pedido.key, pedido.tienda)" ion-button icon-only item-end>
+          <ion-icon name="more"></ion-icon>
+        </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,43 @@
+page-perfil {
+
+    #foto{
+        position: relative;
+    }
+    
+    #perfil{
+        border-radius: 50%;
+    }
+    
+    #botonIcono{
+        position: absolute!important;
+        bottom: 0;
+        left: 60%;
+        background-color: #0a0a0aa6;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+        color: #e6e7e6;
+    }
+    .botonPass{
+        background-color: #ffffff;
+        color: #000000a6;
+        font-size: 18px!important;
+        
+    }
+
+    .headerRadio{
+        background-color: #ffffff;
+    }
+
+    .list-header-ios{
+        border-top: 0.55px solid #c8c7cc;
+    }
+
+    .list-header-md{
+        border-top : none;
+        border-bottom: 1px solid #dedede;
+        margin-bottom: 0px;
+    }
+
+}

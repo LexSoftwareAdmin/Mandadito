@@ -1,0 +1,63 @@
+page-caliicacion {
+
+    .slides{
+        margin-top: -30px;
+    }
+
+    .imgProducto{
+        width: 200px;
+        max-height: 150px;
+    }
+
+    .nombre{
+        font-size: 2rem;
+    }
+
+    .cantidad{
+        margin: 6px 0;
+        font-size: 1.3rem;
+    }
+
+    .precio{
+        margin: 6px 0;
+        font-size: 1.3rem;
+    }
+
+    .estrellas{
+        width: 265px;
+        margin: 40px auto 0 auto;
+    }
+
+    .estrella{
+        background-color: white;
+        color: #d0d0d0;
+        font-size: 20px;
+        width: 45px;
+        transition: .5s;
+        box-shadow: none;
+    }
+
+    .marcada{
+        color: #ffff2c;
+    }
+
+    .estrella:hover{
+        background-color: rgb(255, 255, 255);
+    }
+
+    .comentario{
+        margin-top: 35px;
+        padding: 0 20px;
+    }
+
+    .botonContenedor{
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .boton{
+        margin: 0 auto 10px auto;
+        width: 80%;
+    }
+
+}
