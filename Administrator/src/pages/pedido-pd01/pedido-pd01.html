@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Pedido: {{id}}
+    </ion-title>
+    <ion-buttons end *ngIf='imprimir'>
+      <button ion-button icon-only (tap)='prepareToPrint()'>
+        <ion-icon name="print"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/uLat0LoFRjOEGlafEFXO_4.png) no-repeat center;background-size:cover;" id="page9">
+  <div class="spacer" style="width:748px;height:20px;" id="pedidoPD01-spacer18"></div>
+  <h1 id="pedidoPD01-heading6" style="color:#FFFFFF;font-weight:600;">
+    Usuario: {{direccion.usuario}}
+  </h1>
+  <div id="pedidoPD01-markdown3" class="show-list-numbers-and-dots">
+    <p style="color:#FFFFFF;font-size:30px;">
+      <strong>
+        Total:
+      </strong>
+      ${{total}}
+    </p>
+    <p style="color:#FFFFFF;font-size:30px;">
+      <strong>
+        Categoria:
+      </strong>
+       {{categoria}}
+    </p>
+  </div>
+  <div class="spacer" style="width:748px;height:28px;" id="pedidoPD01-spacer19"></div>
+  <ion-list id="pedidoPD01-list7">
+    <ion-item-divider color="light" id="pedidoPD01-list-item-divider5">
+      Descripción del Pedido
+    </ion-item-divider>
+    <ion-item *ngFor="let producto of productos">
+      <ion-thumbnail item-left>
+        <img src={{producto.url}} />
+      </ion-thumbnail>
+      <h2>
+        {{producto.nombre}}
+      </h2>
+      <p>cantidad: {{producto.cantidad}} {{producto.unidadMed}}</p>
+      <p *ngIf="producto.sugerencia != ''  && producto.sugerencia">Sugerencia: {{producto.sugerencia}}</p>
+    </ion-item>
+  </ion-list>
+  <h2 id="pedidoPD01-heading8" style="color:#FFFFFF;font-weight:600;">
+    Datos de Envío
+  </h2>
+  <ion-list id="pedidoPD01-list8">
+    <ion-item-divider color="light" id="pedidoPD01-list-item-divider6">
+      Dirección de Cliente
+    </ion-item-divider>
+    <ion-item *ngIf='envioCond'> 
+      <h2>Gastos de envio ${{envio}}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Destinatario
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="direccion.remitente" disabled></ion-input>
+    </ion-item>
+    <ion-item id="pedidoPD01-input11">
+      <ion-label>
+        Calle
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="direccion.nomCalle" disabled></ion-input>
+    </ion-item>
+    <ion-item id="pedidoPD01-input12">
+      <ion-label>
+        Colonia
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="direccion.nomColonia" disabled></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label>
+        Codigo postal
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="direccion.cp" disabled></ion-input>
+    </ion-item>
+    <ion-item id="pedidoPD01-input13">
+      <ion-label>
+        Teléfono
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="direccion.telefono" disabled></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label>Metodo de pago</ion-label>
+      <ion-input [(ngModel)]="direccion.metPago" type="text"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="otroMet">
+      <ion-label>Especifique</ion-label>
+      <ion-input [(ngModel)]="otroMetodo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Recoger en bodega</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="direccion.bod" disabled></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Requiero factura</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="direccion.fac" disabled></ion-checkbox>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label>Sugerencia</ion-label>
+      <ion-input [(ngModel)]="direccion.sugerencia" type="text" readonly></ion-input>
+    </ion-item>
+  </ion-list>
+  <h2 id="pedidoPD01-heading9" style="color:#FFFFFF;font-weight:600;">
+    Estatus del Pedido
+  </h2>
+  <ion-item >
+    <ion-label>Estatus</ion-label>
+    <ion-select [(ngModel)]="estado" (ionChange)="cambiarEstado($event)">
+      <ion-option>Surtiendo</ion-option>
+      <ion-option>En ruta</ion-option>
+      <ion-option>Entregado</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

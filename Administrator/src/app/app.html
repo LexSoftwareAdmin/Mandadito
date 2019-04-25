@@ -1,0 +1,24 @@
+<ion-menu [content]="mainContent">
+  <ion-content id="side-menu21">
+    <div class="spacer" style="width:716px;height:49px;" id="menu-spacer11"></div>
+    <img src="assets/img/lAoClfoGS6yd8oOlMDt7_mandadito1.png" style="display:block;width:60%;height:auto;margin-left:auto;margin-right:auto;" />
+    <div class="spacer" style="width:716px;height:49px;" id="menu-spacer25"></div>
+    <button  ion-button block color="positive" menuClose="" style="font-weight:600;" (click)="goCalificacion()">
+      Calificaciones
+  </button>
+    <button id="menu-button11" ion-button color="positive" block style="font-weight:600;" href="mailto:soporte@lexsoftware.net">
+      Soporte Técnico
+    </button>
+    <div class="spacer" style="width:716px;height:652px;" id="menu-spacer28"></div>
+    <div id="menu-markdown5" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">
+        <strong>
+          Lex Software S.A. de C.V.
+        </strong>
+        All Rights Reserved 2018
+      </p>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

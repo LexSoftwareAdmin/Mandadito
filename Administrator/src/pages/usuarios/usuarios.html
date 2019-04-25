@@ -1,0 +1,24 @@
+<ion-content padding style="background:url(assets/img/scwMSOdxSBK9V6qrlwRB_4.png) no-repeat center;background-size:cover;" id="page5">
+  <div class="spacer" style="height:20px;" id="usuarios-spacer22"></div>
+  <h1 id="usuarios-heading13" style="color:#FFFFFF;font-weight:600;">
+    Mis Clientes
+  </h1>
+  <div class="spacer" style="width:748px;height:28px;" id="usuarios-spacer23"></div>
+  <ion-list id="usuarios-list11">
+    <ion-item-divider color="light" id="usuarios-list-item-divider9">
+      Listado de Clientes
+    </ion-item-divider>
+    <ion-item *ngFor="let user of users" color="none" (tap)="goToPerfilDeCliente(user.key)">
+      <ion-avatar item-left>
+        <img src={{user.url}} />
+      </ion-avatar>
+      <h2>
+        {{user.nom}} {{user.apPat}} {{user.apMat}}
+      </h2>
+    </ion-item>
+    
+  </ion-list>
+  <ion-fab right bottom (tap)="salir()">
+    <button ion-fab color="light"><ion-icon name="log-out"></ion-icon></button>
+  </ion-fab>
+</ion-content>

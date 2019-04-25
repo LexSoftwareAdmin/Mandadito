@@ -1,0 +1,4 @@
+#Fri Mar 22 11:56:05 CST 2019
+base.0=/Users/lexsoftware/Desktop/achivos/codigoFuente/Administrator/ElMandadito/platforms/android/app/build/intermediates/transforms/dex/release/0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{titulo}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  
+  <ion-card class="card">
+    <ion-card-header text-center>
+      Datos del producto
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item > 
+          <ion-label floating>Nombre del producto</ion-label>
+          <ion-input [(ngModel)]="nombrePro" (ionBlur)='noSignos("nombre",true)' type="text"></ion-input> 
+        </ion-item>
+
+        <ion-item > 
+          <ion-label floating>Descripción</ion-label>
+          <ion-input [(ngModel)]="descripcion" (ionBlur)='noSignos("descripcion",true)' type="text"></ion-input> 
+        </ion-item>
+
+        <ion-item class="sele"> 
+          <ion-label>
+            Unidad de medida
+          </ion-label>
+    
+          <ion-select [(ngModel)]="unidadMed" (ionChange)="pieza($event)"> 
+            <ion-option >Kilogramos</ion-option>
+            <ion-option >Manojo</ion-option>
+            <ion-option >Charola</ion-option>
+            <ion-option >Domo</ion-option>
+            <ion-option >Pieza</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="sele" *ngIf="piezaval"> 
+          <ion-label>
+            Tamaño de la pieza
+          </ion-label>
+    
+          <ion-select [(ngModel)]="piezaPro"> 
+            <ion-option >Chico</ion-option>
+            <ion-option >Mediano</ion-option>
+            <ion-option >Grande</ion-option>
+          </ion-select>
+        </ion-item>
+
+          <ion-item >
+            <ion-label floating>Precio mayoreo</ion-label>
+            <ion-input [(ngModel)]="precioMay" type="number"></ion-input>
+          </ion-item>
+      
+          <ion-item > 
+            <ion-label floating>Precio menudeo</ion-label>
+            <ion-input [(ngModel)]="precioMen" type="number"></ion-input>
+          </ion-item>
+    
+        <ion-item class="sele">
+          <ion-label> 
+            Categoría de Producto
+          </ion-label>
+    
+          <ion-select  [(ngModel)]="categoPro" >
+            <ion-option >Frutas</ion-option>
+            <ion-option >Verduras</ion-option>
+            <ion-option >Basicos</ion-option>
+          </ion-select>
+        </ion-item>
+        <img class="img" src={{imagen}} alt="imagen del producto" id="producto">
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+      <button class="boton" ion-button color="secondary" block (tap)="selecImagen()">Imagen del Producto</button>   
+      <button *ngIf="!editCond" class="boton" (tap)="verificarCampos(true)" ion-button block>Guardar Cambios</button>
+      <button *ngIf="editCond" class="boton"  (tap)="ediCon()" ion-button block>Guardar Cambios</button>
+</ion-content>

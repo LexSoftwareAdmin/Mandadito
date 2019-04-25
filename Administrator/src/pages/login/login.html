@@ -1,0 +1,73 @@
+<!-- 
+    Empresa:           Lex Software México S.A. de C.V.
+    Proyecto:          El Mandadito (Administrador).
+    Desarrollador:     Oscar Paolo Razo López.
+    Pantalla:          Login. (Inicio de Sesión de Usuarios).
+    Fecha de Creación: 20 de Octubre del 2018. 
+
+    Historial de Modificaciones. 
+
+    Fecha de Modificación | Líneas Modificadas | Programador / Desarrollador | Descripción de Modificación.
+
+  -->
+
+<ion-content padding style="background:url(assets/img/qTOJuq0lSn6ErL9zGdOx_4.png) no-repeat center;background-size:cover;" id="page6">
+  <!-- Espacio para separar logo del borde superior de la pantalla. -->
+  <div class="spacer" style="width:748px;height:18px;" id="login-spacer1"></div>
+
+  <!-- Imagen de logotipo de la aplicación. -->
+  <img src="assets/img/5JThhhqJRZOEdCG2I17n_mandaditowhite1.png" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  
+  <!-- Espacio para separar logotipo de la aplicación e imagen de usuario. -->
+  <div class="spacer" style="width:748px;height:30px;" id="login-spacer2"></div>
+
+  <!-- Imagen de usuario para el login de la cuenta de Administrador. -->
+  <img src="assets/img/H8pkpQR2Q36cwWnEXEjj_user_icon-icons.com_66546.png" style="display:block;width:47%;height:auto;margin-left:auto;margin-right:auto;" />
+  
+  <!-- Label central con mensaje de bienvenida. -->
+  <h1 id="login-heading1" style="color:#FFFFFF;font-weight:600;text-align:center;">
+    Bienvenido
+  </h1>
+
+  <!-- Espacio entre mensaje central de bienvenida y campo para nombre del Administrador. -->
+  <div class="spacer" style="width:748px;height:33px;" id="login-spacer5"></div>
+  
+  <!-- Inicio del formulario. -->    
+    <!-- Caja de texto para el nombre del Administrador-->
+    <ion-item id="login-input_AdminName">
+      <ion-input [(ngModel)]="correo" type="email" placeholder="Usuario del Administrador"></ion-input>
+    </ion-item>
+    
+    <!-- Espacio entre campos. -->
+    <div class="spacer" style="width:748px;height:29px;" id="login-spacer3"></div>
+    
+    <!-- Caja de texto para el password del Administrador. -->
+    <ion-item id="login-input_AdminPassword">
+      <ion-input (keypress)="ingEnt($event)" [(ngModel)]="password" type="password" placeholder="Contraseña del Administrador"></ion-input>
+    </ion-item>
+  <!-- Fin del formulario de login. -->
+  
+  <!-- Espacio entre campo de password y botón de inicio de sesión. -->
+  <div class="spacer" style="width:748px;height:29px;" id="login-spacer4"></div>
+
+  <!-- Botón de inicio de sesión de login. -->
+  <!--<button id="BTN_IniciarSesionAdmin" name="BTN_IniciarSesionAdmin" ion-button color="energized" block style="font-weight:600;" on-click="goToInventario()">
+    Iniciar Sesión
+  </button>-->
+
+  <!-- Botón de inicio de sesión de login. -->
+  <button ion-button color="secondary" block style="font-weight:600;" (tap)="ingresar()">
+    Iniciar Sesión
+  </button>
+
+  <!-- Footer Label para derechos de autor. -->
+  <div class="spacer" style="width:748px;height:12px;" id="login-spacer5"></div>
+  <div id="login-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#FFFFFF;">
+      <strong>
+        Lex Software S.A. de C.V.
+      </strong>
+      All Rights Reserved 2018
+    </p>
+  </div>
+</ion-content>

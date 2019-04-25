@@ -1,0 +1,27 @@
+<!--
+  Generated template for the CalificacionesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>calificaciones</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background:url(assets/img/scwMSOdxSBK9V6qrlwRB_4.png) no-repeat center;background-size:cover;" id="page5">
+  <ion-list>
+    <ion-item *ngFor='let calificacion of calificaciones' (tap)='detalleProducto(calificacion.key,calificacion.usuario)'>
+      <div class="etiqueta {{calificacion.color}}"></div>
+      <ion-icon name="star" item-start class="icono"></ion-icon>
+      <h2>Pedido: {{calificacion.key}}</h2>
+      <h3>Comentario: {{calificacion.calificacion.comentario}}</h3>
+      <p>Estrellas: {{calificacion.calificacion.estrellas}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

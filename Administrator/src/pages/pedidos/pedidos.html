@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-navbar>
+    <ion-segment [(ngModel)]="estado">
+      <ion-segment-button value="todos">
+        Todos
+      </ion-segment-button>
+      <ion-segment-button value="entregados">
+        Entregados
+      </ion-segment-button>
+      <ion-segment-button value="noEntregados">
+        No Entregados
+      </ion-segment-button>
+    </ion-segment>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background:url(assets/img/cz1VLAfVSZK6UJsE5cKe_4.png) no-repeat center;background-size:cover;" id="page3">
+  <div class="spacer" style="width:748px;height:20px;" id="pedidos-spacer16"></div>
+  <h1 id="pedidos-heading5" style="color:#FFFFFF;font-weight:600;">
+    Mi Lista de Pedidos
+  </h1>
+  <div class="spacer" style="width:748px;height:19px;" id="pedidos-spacer17"></div>
+  <div [ngSwitch]="estado">
+      <ion-list *ngSwitchCase="'todos'">
+          <ion-item-divider color="light" id="pedidos-list-item-divider4">
+            Listado de Pedidos en el Sistema
+          </ion-item-divider>
+          <ion-item *ngFor="let pedido of pedidos" >
+            <ion-avatar item-left (tap)="infoPedido(pedido.key, pedido.user)">
+              <img src="assets/img/2iymf5pT8CGZbXcutCuQ_iconos-carretilla.png" />
+            </ion-avatar>
+            <div class="etiqueta {{pedido.color}}" (tap)="infoPedido(pedido.key, pedido.user)">
+      
+            </div>
+            <h2 (tap)="infoPedido(pedido.key, pedido.user)">
+              ID del Pedido: {{pedido.key}}
+            </h2>
+            <p class="parrafo" text-end (tap)="infoPedido(pedido.key, pedido.user)">{{pedido.estado}}</p>
+            <button class="eliminar" *ngIf="pedido.estado=='Entregado'" (tap) = "eliminar(pedido.key, pedido.user)" ion-button icon-only item-end>
+              <ion-icon name="trash"></ion-icon>
+            </button>
+            
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'entregados'">
+            <ion-item-divider color="light" id="pedidos-list-item-divider4">
+              Listado de Pedidos en el Sistema
+            </ion-item-divider>
+            <ion-item *ngFor="let pedido of entregados" (tap)="infoPedido(pedido.key, pedido.user)">
+              <ion-avatar item-left>
+                <img src="assets/img/2iymf5pT8CGZbXcutCuQ_iconos-carretilla.png" />
+              </ion-avatar>
+              <div class="etiqueta {{pedido.color}}">
+        
+              </div>
+              <h2>
+                ID del Pedido: {{pedido.key}}
+              </h2>
+              <p class="parrafo" text-end>{{pedido.estado}}</p>
+              
+            </ion-item>
+          </ion-list>
+          <ion-list *ngSwitchCase="'noEntregados'">
+              <ion-item-divider color="light" id="pedidos-list-item-divider4">
+                Listado de Pedidos en el Sistema
+              </ion-item-divider>
+              <ion-item *ngFor="let pedido of noEntregados" (tap)="infoPedido(pedido.key, pedido.user)">
+                <ion-avatar item-left>
+                  <img src="assets/img/2iymf5pT8CGZbXcutCuQ_iconos-carretilla.png" />
+                </ion-avatar>
+                <div class="etiqueta {{pedido.color}}">
+          
+                </div>
+                <h2>
+                  ID del Pedido: {{pedido.key}}
+                </h2>
+                <p class="parrafo" text-end>{{pedido.estado}}</p>
+                
+              </ion-item>
+            </ion-list>
+
+  </div>
+  
+</ion-content>

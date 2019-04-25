@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Perfil del Cliente
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:url(assets/img/scwMSOdxSBK9V6qrlwRB_4.png) no-repeat center;background-size:cover;" id="page15">
+    <div class="spacer" style="width:300px;height:21px;" id="registrarse-spacer13"></div>
+    <div id="foto">
+      <img src={{usuario.url}} class="perfil" style="display:block;width:160px;height:160px;margin-left:auto;margin-right:auto;" />
+    </div>
+    <div class="spacer" style="width:300px;height:21px;" id="registrarse-spacer12"></div>
+    <ion-list id="registrarse-list4">
+      <ion-item-divider color="light" id="registrarse-list-item-divider5">
+        Datos de Usuario
+      </ion-item-divider>
+      <ion-item >
+        <ion-label ></ion-label>
+        <ion-input disabled [(ngModel)]="usuario.nom" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label ></ion-label>
+        <ion-input disabled [(ngModel)]="usuario.apPat" type="text" placeholder="Apellido Paterno"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label ></ion-label>
+        <ion-input disabled [(ngModel)]="usuario.apMat" type="text" placeholder="Apellido Materno"></ion-input>
+      </ion-item>
+      <ion-item id="registrarse-input7">
+        <ion-label ></ion-label>
+        <ion-input disabled [(ngModel)]="usuario.nomUsu" type="text" placeholder="Nombre de usuario"></ion-input>
+      </ion-item>
+      <ion-list radio-group [(ngModel)]="usuario.categoria">
+        <ion-item>
+          <ion-label>Particular</ion-label>
+          <ion-radio disabled value="particular" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Negocio</ion-label>
+          <ion-radio disabled value="negocio"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-list>
+    <div class="spacer" style="width:300px;height:24px;" id="registrarse-spacer14"></div>
+    <ion-item-divider color="light" id="registrarse-list-item-divider6">
+      Datos de Envío
+    </ion-item-divider>
+    <ion-item id="registrarse-input11">
+      <ion-label>
+        Nombre del Remitente
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.nomRem" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input10">
+      <ion-label>
+        Calle y número
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.calleNum" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input11">
+      <ion-label>
+        Colonia
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.colonia" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input12">
+      <ion-label>
+        Cuidad
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.ciudad" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input13">
+      <ion-label>
+        Estado
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.estado" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input14">
+      <ion-label>
+        Teléfono
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.telefono" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input15">
+      <ion-label>
+        Código postal
+      </ion-label>
+      <ion-input disabled [(ngModel)]="usuario.cp" type="text" placeholder=""></ion-input>
+    </ion-item>
+    <div class="spacer" style="width:300px;height:24px;" id="registrarse-spacer15"></div>
+    <ion-item-divider color="light" id="registrarse-list-item-divider7">
+      Datos Fiscales (Opcional)
+    </ion-item-divider>
+    <ion-item id="registrarse-input18">
+        <ion-label></ion-label>
+        <ion-input disabled [(ngModel)]="usuario.nomFis" type="text" placeholder="Nombre o razón soical"></ion-input>
+      </ion-item>
+    <ion-item id="registrarse-input16">
+      <ion-label></ion-label>
+      <ion-input disabled [(ngModel)]="usuario.dirFis" type="text" placeholder="Dirección Fiscal"></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-input17">
+      <ion-label></ion-label>
+      <ion-input disabled [(ngModel)]="usuario.rfc" type="text" placeholder="RFC"></ion-input>
+    </ion-item>
+    <ion-item >
+        <ion-label></ion-label>
+        <ion-input disabled [(ngModel)]="usuario.correoFis" type="text" placeholder="correo electronico"></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-select3">
+      <ion-label>
+        Uso CFID
+      </ion-label>
+      <ion-select disabled [(ngModel)]="usuario.usoCFID" (ionChange)="especificarCFID($event)">
+        <ion-option >Otro</ion-option>
+        <ion-option>Por definir</ion-option>
+        <ion-option>Adquisición de mercancias</ion-option>
+        <ion-option>Gastos en general</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="otro">
+      <ion-label>Especifique</ion-label>
+      <ion-input disabled [(ngModel)]="otroCFID" type="text"></ion-input>
+    </ion-item>
+    <ion-item id="registrarse-select4">
+      <ion-label>
+        Metodo de pago
+      </ion-label>
+      <ion-select disabled [(ngModel)]="usuario.MetPago" name="">
+        <ion-option>Transferencia bancaria</ion-option>
+        <ion-option>Pago con cheque nominativo</ion-option>
+        <ion-option>Pago en efectivo</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-list radio-group [(ngModel)]="opcion">
+      <ion-item>
+        <ion-label>Ocupo detalle de los productos</ion-label>
+        <ion-radio disabled value="detalle" ></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Puede facturarme cualquier producto</ion-label>
+        <ion-radio disabled value="factura"></ion-radio>
+      </ion-item>
+    </ion-list>
+</ion-content>

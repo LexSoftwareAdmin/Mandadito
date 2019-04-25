@@ -1,0 +1,73 @@
+<ion-content >
+  <ion-card class="card">
+    <ion-card-header text-center class="header">
+      Lista de productos
+    </ion-card-header>
+    <ion-card-content class="cardCont">
+        <ion-list>
+            <div class="segmentos">
+                <ion-segment [(ngModel)]="categor">
+                    <ion-segment-button value="frutas">Frutas </ion-segment-button>
+                    <ion-segment-button value="verduras">Verduras</ion-segment-button>
+                    <ion-segment-button value="basicos">Basicos</ion-segment-button>
+                </ion-segment>
+            </div>
+            <div [ngSwitch]="categor">
+                <div *ngSwitchCase="'frutas'">
+                  <ion-item-sliding *ngFor="let frutas of frut">
+                    <ion-item class="itemList"  (tap)="goToEditarInformaciNDelProducto(frutas.key)">
+                      <ion-avatar item-start class="avatar">
+                        <img src={{frutas.url}}>
+                      </ion-avatar>
+                      <h2>{{frutas.nombre}}</h2>
+                    </ion-item>
+                    <ion-item-options side="left">
+                      <button ion-button color="danger" (tap)="eliminar(frutas.key)">
+                        <ion-icon name="trash"></ion-icon>
+                        Eliminar
+                      </button>
+                    </ion-item-options>
+                  </ion-item-sliding> 
+                </div>
+                <div *ngSwitchCase="'verduras'">
+                    <ion-item-sliding *ngFor="let verduras of verd">
+                      <ion-item class="itemList"  (tap)="goToEditarInformaciNDelProducto(verduras.key)">
+                        <ion-avatar item-start class="avatar">
+                          <img src={{verduras.url}}>
+                        </ion-avatar>
+                        <h2>{{verduras.nombre}}</h2>
+                      </ion-item>
+                      <ion-item-options side="left">
+                        <button ion-button color="danger" (tap)="eliminar(verduras.key)">
+                          <ion-icon name="trash"></ion-icon>
+                          Eliminar
+                        </button>
+                      </ion-item-options>
+                    </ion-item-sliding> 
+                  </div>
+                  <div *ngSwitchCase="'basicos'">
+                      <ion-item-sliding *ngFor="let basicos of basic">
+                        <ion-item class="itemList"  (tap)="goToEditarInformaciNDelProducto(basicos.key)">
+                          <ion-avatar item-start class="avatar">
+                            <img src={{basicos.url}}>
+                          </ion-avatar>
+                          <h2>{{basicos.nombre}}</h2>
+                        </ion-item>
+                        <ion-item-options side="left">
+                          <button ion-button color="danger" (tap)="eliminar(basicos.key)">
+                            <ion-icon name="trash"></ion-icon>
+                            Eliminar
+                          </button>
+                        </ion-item-options>
+                      </ion-item-sliding> 
+                    </div>
+            </div>
+               
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab bottom right>
+      <button ion-fab (tap)="goToAltaDeNuevoProducto()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>

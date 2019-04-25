@@ -1,0 +1,141 @@
+<!-- 
+    Empresa:           Lex Software México S.A. de C.V.
+    Proyecto:          El Mandadito (Administrador).
+    Desarrollador:     Oscar Paolo Razo López.
+    Pantalla:          Editar Información del Producto. (Inventario de Productos).
+    Fecha de Creación: 21 de Octubre del 2018. 
+
+    Historial de Modificaciones. 
+
+    Fecha de Modificación | Líneas Modificadas | Programador / Desarrollador | Descripción de Modificación.
+
+-->
+<!-- Cabecera de la ventana. -->
+<ion-header>
+  <ion-navbar> <!-- Botón de navegación. -->
+    <!-- Botón de retroceso de ventana. -->
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <!-- Título de la cabecera. -->
+    <ion-title>
+      Editar Producto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- Background de la pantalla. -->
+<ion-content padding style="background:url(assets/img/ydB4sxvZTquHPjqhrP52_4.png) no-repeat center;background-size:cover;" id="page8">
+  <!-- Espacio del borde superior y el texto de formulario. -->
+  <div class="spacer" style="width:748px;height:0px;" id="editarInformaciNDelProducto-spacer12"></div>
+  
+  <!-- Texto de cabecera. -->
+  <h1 id="editarInformaciNDelProducto-heading4" style="color:#FFFFFF;font-weight:600;">
+    Formulario de Información
+  </h1>
+
+  <!-- Espacio entre el texto y el formulario. -->
+  <div class="spacer" style="width:748px;height:23px;" id="editarInformaciNDelProducto-spacer13"></div>
+
+  <!-- Elemento cabecera de la lista. -->
+  <ion-list id="editarInformaciNDelProducto-list3">
+    <!-- Título de la lista de datos del producto. -->
+    <ion-item-divider color="light" id="editarInformaciNDelProducto-list-item-divider3">
+      Datos del Producto
+    </ion-item-divider>
+
+    <!-- Inicio del formulario. -->
+    <ion-item id="ITM_NombreProductoModif"> <!-- Nombre del producto. -->
+      <ion-label>
+        Nombre del Producto:
+      </ion-label>
+      <ion-input id="TXT_ModifNombreProd" name="TXT_ModifNombreProd" type="text" placeholder=" "></ion-input>
+    </ion-item>
+
+    <ion-item id="ITM_PrecioMayoreoModif"> <!-- Precio de Mayoreo del Producto. -->
+      <ion-label>
+        Precio de Mayoreo:
+      </ion-label>
+      <ion-input id="TXT_ModifPrecioMayoreo" name="TXT_ModifPrecioMayoreo" type="number" placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item id="ITM_PrecioMenudeoModif"> <!-- Precio de Menudeo del Producto. -->
+      <ion-label>
+        Precio Menudeo:
+      </ion-label>
+      <ion-input id="TXT_ModifPrecioMenudeo" name="TXT_ModifPrecioMenudeo" type="text" placeholder=""></ion-input>
+    </ion-item>
+
+    <ion-item id="ITM_CantidadProducto"> <!-- Cantidad de Producto. -->
+      <ion-label>
+        Cantidad:
+      </ion-label>
+      <ion-input id="" name="" type="text" placeholder="40"></ion-input>
+    </ion-item>
+    <ion-item id="editarInformaciNDelProducto-select3">
+      <ion-label>
+        Unidad
+      </ion-label>
+      <ion-select name="">
+        <ion-option>
+          Kg
+        </ion-option>
+        <ion-option>
+          Gramos (gr)
+        </ion-option>
+        <ion-option>
+          Kilogramos (Kg)
+        </ion-option>
+        <ion-option>
+          Pieza (Pza)
+        </ion-option>
+        <ion-option>
+          Manojo (Mjo)
+        </ion-option>
+        <ion-option>
+          Charola
+        </ion-option>
+        <ion-option>
+          Domo
+        </ion-option>
+        <ion-option>
+          Bolsa
+        </ion-option>
+        <ion-option>
+          Arpilla
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item id="editarInformaciNDelProducto-select4">
+      <ion-label>
+        Categoría de Producto
+      </ion-label>
+      <ion-select name="">
+        <ion-option>
+          Verduras
+        </ion-option>
+        <ion-option>
+          Frutas
+        </ion-option>
+        <ion-option>
+          Especias
+        </ion-option>
+        <ion-option>
+          Verduras
+        </ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="spacer" style="width:748px;height:45px;" id="editarInformaciNDelProducto-spacer14"></div>
+  <button id="editarInformaciNDelProducto-button6" ion-button color="energized" block style="font-weight:600;">
+    Cargar Fotografía del Producto
+  </button>
+  <div class="spacer" style="width:748px;height:165px;" id="editarInformaciNDelProducto-spacer15"></div>
+  <button id="editarInformaciNDelProducto-button7" ion-button color="balanced" block style="font-weight:600;">
+    Guardar Cambios
+  </button>
+  <button id="editarInformaciNDelProducto-button8" ion-button color="assertive" block style="font-weight:600;">
+    Descartar Cambios
+  </button>
+</ion-content>
