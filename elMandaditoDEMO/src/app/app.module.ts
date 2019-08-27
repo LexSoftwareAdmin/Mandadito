@@ -43,12 +43,13 @@ import { CarritoProvider } from '../providers/carrito/carrito';
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAjaKKjMcn8qxiOl_AppnpbKBwucm9vzCw",
-  authDomain: "aptito-71e75.firebaseapp.com",
-  databaseURL: "https://aptito-71e75.firebaseio.com",
-  projectId: "aptito-71e75",
-  storageBucket: "aptito-71e75.appspot.com",
-  messagingSenderId: "937762778096"
+    apiKey: "AIzaSyAvE4cO_aJCfJzd7tBJzUvtNr5ZeQt29To",
+    authDomain: "el-mandadito-7f631.firebaseapp.com",
+    databaseURL: "https://el-mandadito-7f631.firebaseio.com",
+    projectId: "el-mandadito-7f631",
+    storageBucket: "el-mandadito-7f631.appspot.com",
+    messagingSenderId: "83052644678",
+    appId: "1:83052644678:web:d4df55abc45c036c"
 };
 
 @NgModule({
